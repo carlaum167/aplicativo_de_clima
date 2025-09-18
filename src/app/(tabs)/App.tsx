@@ -1,10 +1,8 @@
 import React, { useRef, useState } from 'react';
-import { Stack } from 'expo-router';
 import '../../../global.css';
 import { View,TouchableOpacity, Text, Button, TextInput,} from 'react-native';
 import { router } from 'expo-router';
-
-import { ScreenContent } from '../../components/ScreenContent';
+import { styles } from '~/src/styles/App';
 import axios from 'axios';
 import WheaterInformations from '~/src/components/WheaterInformations/WheaterInformations';
 
@@ -39,8 +37,8 @@ export default function App() {
   return (
 
     <>
-      <Stack.Screen options={{ title: 'Tab One' }} />
-      <View>
+ 
+      <View style={styles.View}>
         <TouchableOpacity onPress={() => router.push('/cadastro')}>
           <Text className="text-lg font-bold text-blue-600">Previsao do tempo</Text>
           <TextInput
@@ -49,11 +47,9 @@ export default function App() {
             value={city}
             onChangeText={setCity}
           />
-          <Button title="Buscar" onPress={CitySearch} />
+          <Button  title="Buscar" onPress={CitySearch} />
 
           {weather && <WheaterInformations weather={weather} />}
-
-        <ScreenContent path="app/(tabs)/index.tsx" title="Tab One" />
         </TouchableOpacity>
       </View>
     </>
