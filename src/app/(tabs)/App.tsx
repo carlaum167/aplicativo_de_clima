@@ -6,9 +6,19 @@ import { router } from 'expo-router';
 
 import { ScreenContent } from '../../components/ScreenContent';
 import axios from 'axios';
+import WheaterInformations from '~/src/components/WheaterInformations/WheaterInformations';
+
+
+interface Weather {
+  weather: { description: string; icon: string }[];
+  main: { temp: number; humidity: number; temp_min: number; temp_max: number };
+  name: string;
+  wind: { speed: number };
+  
+}
 
 export default function App() {
-  const [weather, setWeather] = React.useState(null);
+  const [weather, setWeather] = React.useState<Weather | undefined>(undefined);
   const inputRef = useRef<TextInput>(null);
   const [city, setCity] = React.useState('');
 
@@ -35,9 +45,13 @@ export default function App() {
             onChangeText={setCity}
           />
           <Button title="Buscar" onPress={CitySearch} />
+
+          <WheaterInformations weather={weather} />
+
         <ScreenContent path="app/(tabs)/index.tsx" title="Tab One" />
         </TouchableOpacity>
       </View>
     </>
   );
 }
+
