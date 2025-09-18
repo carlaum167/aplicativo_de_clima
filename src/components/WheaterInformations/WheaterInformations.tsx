@@ -1,4 +1,5 @@
 import { View, Text, Image} from "react-native"
+import { stylesWI } from "~/src/styles/WheaterInformations";
 
 type Weather = {
     name: string;
@@ -20,17 +21,17 @@ interface WheaterInformationsProps {
 function WheaterInformations({ weather }: WheaterInformationsProps) {
 
     return (
-        <View>
-            <Text>Informações do Tempo:</Text>
+        <View style={stylesWI.View}>
+            <Text style={stylesWI.Title}>Informações do Tempo:</Text>
 
             {weather && (
                 <View>
-                    <Image source={{ uri: `https://openweathermap.org/img/wn/${weather.weather[0].icon}.png` }} alt="Weather icon" style = {{width: 80, height: 50}} />
-                    <Text>Cidade: {weather.name}</Text>
-                    <Text>Temperatura: {Math.round(weather.main.temp)}°C</Text>
-                    <Text>Descrição: {weather.weather[0].description}</Text>
-                    <Text>Sensação Térmica: {Math.round(weather.main.feels_like)}°C</Text>
-                    <Text>Umidade: {weather.main.humidity}</Text>
+                    <Image source={{ uri: `https://openweathermap.org/img/wn/${weather.weather[0].icon}.png` }} alt="Weather icon" style={stylesWI.Image} />
+                    <Text style={stylesWI.Texts}>Cidade: {weather.name}</Text>
+                    <Text style={stylesWI.Texts}>Temperatura: {Math.round(weather.main.temp)}°C</Text>
+                    <Text style={stylesWI.Texts}>Descrição: {weather.weather[0].description}</Text>
+                    <Text style={stylesWI.Texts}>Sensação Térmica: {Math.round(weather.main.feels_like)}°C</Text>
+                    <Text style={stylesWI.Texts}>Umidade: {weather.main.humidity}</Text>
                 </View>
             )}
         </View>

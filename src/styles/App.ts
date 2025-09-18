@@ -1,9 +1,10 @@
 import { StyleSheet, TextInput } from 'react-native';
+import { Button } from '../components/Button';
 
 export const styles = StyleSheet.create({
   Tela: {
     width: '100%',
-    height: 1000,
+    height: 1200,
     backgroundColor: '#7ec5ffff',
     flex: 1,
     alignItems: 'center' as const,   
@@ -44,4 +45,12 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     marginBottom: 20,
     },
+    Button:{
+      backgroundColor: '#007bff',
+      borderRadius: 15,
+      padding: 10,
+      width: '50%',
+      alignItems: 'center' as const,
+      justifyContent: 'center' as const,
+    }
   });

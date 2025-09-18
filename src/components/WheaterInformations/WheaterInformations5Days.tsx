@@ -1,4 +1,5 @@
 import { View, Text, Image } from "react-native";
+import { stylesWI5 } from "~/src/styles/WheaterInformations5Days";
 
 function Weather5Days({ weather5Days }: { weather5Days: any }) {
     
@@ -18,14 +19,15 @@ function convertDate(date: { dt: number; }){
     return newDate;
 }
   return (
-    <View>
-        <Text>Previsão para 5 dias:</Text>
+    <View style={stylesWI5.View}>
+        <Text style={stylesWI5.Title}>Previsão para 5 dias:</Text>
       {nextFiveDays.map((forecast: any) => (
         <View key={forecast.dt}>
-          <Text>{convertDate(forecast)}</Text>
-          <Image source={{ uri: `https://openweathermap.org/img/wn/${forecast.weather[0].icon}.png` }} alt="Weather icon" style = {{width: 45, height: 35}} />
-          <Text>{forecast.weather[0].description}</Text>
-          <Text>{Math.round(forecast.main.temp_min)}°C min / {Math.round(forecast.main.temp_max)}°C máx</Text>
+          <Text style={stylesWI5.Text5Days}>{convertDate(forecast)}:</Text>
+           <Text style={stylesWI5.Text5Days}>{Math.round(forecast.main.temp_min)}°C min | {Math.round(forecast.main.temp_max)}°C máx</Text>
+          <Image source={{ uri: `https://openweathermap.org/img/wn/${forecast.weather[0].icon}.png` }} alt="Weather icon" style={stylesWI5.Image} />
+          <Text style={stylesWI5.Text5Days}>{forecast.weather[0].description}</Text>
+         
         </View>
       ))}
     </View>

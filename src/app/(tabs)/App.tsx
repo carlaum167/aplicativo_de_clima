@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import '../../../global.css';
-import { View, Text, Button, TextInput, ScrollView} from 'react-native';
+import { View, Text, Button, TextInput, ScrollView, TouchableOpacity} from 'react-native';
 import { router } from 'expo-router';
 import { styles } from '~/src/styles/App';
 import axios from 'axios';
@@ -56,7 +56,10 @@ export default function App() {
             value={city}
             onChangeText={setCity}
           />
-          <Button  title="Buscar" onPress={CitySearch} />
+          {/* <Button title="Buscar" onPress={CitySearch} /> */}
+          <TouchableOpacity style={styles.Button} onPress={CitySearch}>
+            <Text style={{ color: '#000000' }}>Buscar</Text>
+          </TouchableOpacity>
           </View>
         <View style={styles.Box2}>
           {weather && <WheaterInformations weather={weather} />}

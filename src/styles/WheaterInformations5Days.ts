@@ -1,22 +1,23 @@
-import { StyleSheet, TextInput, View } from 'react-native';
+import { StyleSheet, TextInput } from 'react-native';
 
-export const stylesWI = StyleSheet.create({
+export const stylesWI5 = StyleSheet.create({
     Title:{
-        fontSize: 15,
+        fontSize: 25,
     fontWeight: 'bold' as const,
     },
     View:{
         display: 'flex',
         flexDirection: 'column' as const,
         justifyContent: 'center' as const,
-        alignItems: 'center' as const,
+        gap: 30,
     },
     Image:{
-        width: 70,
-        height: 60,
+        width: 45,
+        height: 35,
         alignSelf: 'center' as const,
     },
-    Texts:{
+
+    Text5Days:{
         fontSize: 15,
     fontWeight: 'bold' as const,
     textAlign: 'center' as const,
