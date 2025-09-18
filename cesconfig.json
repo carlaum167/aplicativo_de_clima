@@ -1,8 +1,6 @@
-// This is an optional configuration file used primarily for debugging purposes when reporting issues.
-// It is safe to delete this file as it does not affect the functionality of your application.
 {
-  "cesVersion": "2.18.10",
-  "projectName": "clima_temp",
+  "cesVersion": "2.18.3",
+  "projectName": "PEsaude",
   "packages": [
     {
       "name": "expo-router",
@@ -16,12 +14,12 @@
       "type": "styling"
     },
     {
-      "name": "supabase",
-      "type": "authentication"
-    },
-    {
       "name": "zustand",
       "type": "state-management"
+    },
+    {
+      "name": "supabase",
+      "type": "authentication"
     }
   ],
   "flags": {
@@ -35,12 +33,12 @@
   },
   "packageManager": {
     "type": "npm",
-    "version": "10.9.3"
+    "version": "10.9.2"
   },
   "os": {
     "type": "Windows_NT",
     "platform": "win32",
     "arch": "x64",
-    "kernelVersion": "10.0.26100"
+    "kernelVersion": "10.0.19045"
   }
 }
