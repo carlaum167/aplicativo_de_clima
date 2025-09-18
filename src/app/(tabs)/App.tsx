@@ -10,11 +10,16 @@ import WheaterInformations from '~/src/components/WheaterInformations/WheaterInf
 
 
 interface Weather {
-  weather: { description: string; icon: string }[];
-  main: { temp: number; humidity: number; temp_min: number; temp_max: number };
   name: string;
-  wind: { speed: number };
-  
+  main: {
+    temp: number;
+    humidity: number;
+    feels_like: number;
+    temp_min?: number;
+    temp_max?: number;
+  };
+  weather: { description: string; icon: string }[];
+  wind?: { speed: number };
 }
 
 export default function App() {
@@ -46,7 +51,7 @@ export default function App() {
           />
           <Button title="Buscar" onPress={CitySearch} />
 
-          <WheaterInformations weather={weather} />
+          {weather && <WheaterInformations weather={weather} />}
 
         <ScreenContent path="app/(tabs)/index.tsx" title="Tab One" />
         </TouchableOpacity>
