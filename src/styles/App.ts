@@ -2,6 +2,8 @@ import { StyleSheet, TextInput } from 'react-native';
 
 export const styles = StyleSheet.create({
   Tela: {
+    width: '100%',
+    height: 1000,
     backgroundColor: '#7ec5ffff',
     flex: 1,
     alignItems: 'center' as const,   

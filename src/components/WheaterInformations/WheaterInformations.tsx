@@ -25,7 +25,7 @@ function WheaterInformations({ weather }: WheaterInformationsProps) {
 
             {weather && (
                 <View>
-                    <Image source={{ uri: `http://openweathermap.org/img/wn/${weather.weather[0].icon}.png` }} alt="Weather icon" />
+                    <Image source={{ uri: `https://openweathermap.org/img/wn/${weather.weather[0].icon}.png` }} alt="Weather icon" style = {{width: 80, height: 50}} />
                     <Text>Cidade: {weather.name}</Text>
                     <Text>Temperatura: {Math.round(weather.main.temp)}°C</Text>
                     <Text>Descrição: {weather.weather[0].description}</Text>

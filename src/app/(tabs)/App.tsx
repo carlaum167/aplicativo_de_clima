@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import '../../../global.css';
-import { View, Text, Button, TextInput,} from 'react-native';
+import { View, Text, Button, TextInput, ScrollView} from 'react-native';
 import { router } from 'expo-router';
 import { styles } from '~/src/styles/App';
 import axios from 'axios';
@@ -45,6 +45,7 @@ export default function App() {
   return (
 
     <>
+    <ScrollView>
  
       <View style={styles.Tela}>
         <View style={styles.Box1}>
@@ -65,6 +66,7 @@ export default function App() {
         </View>
           
       </View>
+    </ScrollView>
     </>
   );
 }
