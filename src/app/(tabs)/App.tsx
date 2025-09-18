@@ -46,18 +46,24 @@ export default function App() {
 
     <>
  
-      <View style={styles.View}>
-          <Text className="text-lg font-bold text-blue-600">Previsao do tempo</Text>
-          <TextInput
+      <View style={styles.Tela}>
+        <View style={styles.Box1}>
+          <Text>Previsao do tempo</Text>
+          <TextInput style={styles.TextInput}
             ref={inputRef}
             placeholder="Digite sua cidade"
             value={city}
             onChangeText={setCity}
           />
           <Button  title="Buscar" onPress={CitySearch} />
-
+          </View>
+        <View style={styles.Box2}>
           {weather && <WheaterInformations weather={weather} />}
+        </View>
+        <View style={styles.Box2}>
           {weather5Days && <WheaterInformations5Days weather5Days={weather5Days} />}
+        </View>
+          
       </View>
     </>
   );
