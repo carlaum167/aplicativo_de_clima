@@ -56,7 +56,6 @@ export default function App() {
             value={city}
             onChangeText={setCity}
           />
-          {/* <Button title="Buscar" onPress={CitySearch} /> */}
           <TouchableOpacity style={styles.Button} onPress={CitySearch}>
             <Text style={{ color: '#000000' }}>Buscar</Text>
           </TouchableOpacity>
