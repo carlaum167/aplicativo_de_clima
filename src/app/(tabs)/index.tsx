@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Stack } from 'expo-router';
 import '../../../global.css';
 import { View,TouchableOpacity, Text, Button, TextInput,} from 'react-native';
@@ -7,16 +7,18 @@ import { router } from 'expo-router';
 import { ScreenContent } from '../../components/ScreenContent';
 import axios from 'axios';
 
-export default function Home() {
+export default function App() {
+  const [weather, setWeather] = React.useState(null);
   const inputRef = useRef<TextInput>(null);
   const [city, setCity] = React.useState('');
 
   async function CitySearch() {
     const keyApi = 'f0389190a410566fa6c742f7488cd7c1';
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${keyApi}`;
-    const data = await axios.get(url);
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${keyApi}&lang=pt_br&units=metric`;
 
-    console.log(data);
+    const apiInfo = await axios.get(url);
+    setWeather(apiInfo.data);
+
   }
 
   return (
