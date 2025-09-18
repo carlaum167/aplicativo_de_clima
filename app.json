@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "PEsaude",
-    "slug": "PEsaude",
+    "name": "Clima_app",
+    "slug": "Clima_app",
     "version": "1.0.0",
 
-    "scheme": "PEsaude",
+    "scheme": "Clima_app",
     "web": {
       "bundler": "metro",
       "output": "static",
