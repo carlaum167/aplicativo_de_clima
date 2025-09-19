@@ -32,7 +32,7 @@ export default function App() {
       try {
         let { status } = await Location.requestForegroundPermissionsAsync();
         if (status !== 'granted') {
-          setErroMsg('Permissão para acessar localização foi negada');
+          setErroMsg('AVISO: Permissão para acessar localização negada');
           return;
         }
 
@@ -82,7 +82,7 @@ export default function App() {
  
       <View style={styles.Tela}>
         <View style={styles.Box1}>
-          <Text>Previsao do tempo</Text>
+          <Text style={styles.Text}>Previsao do tempo</Text>
           <TextInput style={styles.TextInput}
             ref={inputRef}
             placeholder="Digite sua cidade"
@@ -90,7 +90,7 @@ export default function App() {
             onChangeText={setCity}
           />
           <TouchableOpacity style={styles.Button} onPress={CitySearch}>
-            <Text style={{ color: '#000000' }}>Buscar</Text>
+            <Text style={styles.Text}>Buscar</Text>
           </TouchableOpacity>
           </View>
         <View style={styles.Box2}>
@@ -99,7 +99,7 @@ export default function App() {
         <View style={styles.Box2}>
           {weather5Days && <WheaterInformations5Days weather5Days={weather5Days} />}
         </View>
-          
+          <Text style={styles.ErroMsg}>{erroMsg}</Text>
       </View>
     </ScrollView>
     </>

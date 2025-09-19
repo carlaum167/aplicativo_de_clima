@@ -23,6 +23,7 @@ function WheaterInformations({ weather }: WheaterInformationsProps) {
     return (
         <View style={stylesWI.View}>
             <Text style={stylesWI.Title}>Informações do Tempo:</Text>
+            
 
             {weather && (
                 <View>
