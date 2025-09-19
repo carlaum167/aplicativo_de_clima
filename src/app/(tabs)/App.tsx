@@ -1,9 +1,11 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import '../../../global.css';
 import { View, Text, Button, TextInput, ScrollView, TouchableOpacity} from 'react-native';
 import { router } from 'expo-router';
 import { styles } from '~/src/styles/App';
 import axios from 'axios';
+import localization from 'expo-localization';
+import * as Location from 'expo-location';
 import WheaterInformations from '~/src/components/WheaterInformations/WheaterInformations';
 import WheaterInformations5Days from '~/src/components/WheaterInformations/WheaterInformations5Days';
 
@@ -22,6 +24,37 @@ interface Weather {
 }
 
 export default function App() {
+  const [currentLocalization, setCurrentLocalization] = React.useState(localization);
+  const [erroMsg, setErroMsg] = React.useState('');
+
+  useEffect(() => {
+    (async () => {
+      try {
+        let { status } = await Location.requestForegroundPermissionsAsync();
+        if (status !== 'granted') {
+          setErroMsg('Permissão para acessar localização foi negada');
+          return;
+        }
+
+        let location = await Location.getCurrentPositionAsync({});
+        let { latitude, longitude } = location.coords;
+
+        const keyApi = 'f0389190a410566fa6c742f7488cd7c1';
+        const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${keyApi}&lang=pt_br&units=metric`;
+        const url5Days = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${keyApi}&lang=pt_br&units=metric`;
+
+        const apiInfo = await axios.get(url);
+        const apiInfo5Days = await axios.get(url5Days);
+
+        setWeather(apiInfo.data);
+        setWeather5Days(apiInfo5Days.data);
+      } catch (error) {
+        setErroMsg('Não foi possível obter a localização');
+      }
+    })();
+
+  }, []);
+
   const [weather, setWeather] = React.useState<Weather | undefined>(undefined);
   const [weather5Days, setWeather5Days] = React.useState<any>(undefined);
 
