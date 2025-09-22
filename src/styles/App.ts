@@ -1,34 +1,34 @@
-import { StyleSheet, TextInput } from 'react-native';
-import { Button } from '../components/Button';
+import { StyleSheet, Dimensions } from 'react-native';
+
+const { width, height } = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
   Tela: {
-    width: '100%',
-    height: 1300,
-    backgroundColor: '#7ec5ffff',
     flex: 1,
-    alignItems: 'center' as const,   
+    backgroundColor: '#7ec5ffff',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    paddingVertical: 20,
   },
-   Box1: {
-    boxSizing: 'border-box' as const,
-    width: '80%',
+  Box1: {
+    width: width * 0.8,
     padding: 10,
     borderRadius: 10,
-    alignItems: 'center' as const,
-    justifyContent: 'center' as const,
-    marginTop: '10%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: height * 0.05,
     backgroundColor: '#ffffff',
     borderColor: '#5f5f5fff',
     borderWidth: 2,
     marginBottom: 20,
   },
-    Text:{
+  Text: {
     fontSize: 15,
-    fontWeight: 'bold' as const,
-    textAlign: 'center' as const,
-    textTransform: 'capitalize' as const,
-    },
-    TextInput: {
+    fontWeight: 'bold',
+    textAlign: 'center',
+    textTransform: 'capitalize',
+  },
+  TextInput: {
     backgroundColor: '#e6e6e6',
     width: '100%',
     height: 40,
@@ -38,37 +38,35 @@ export const styles = StyleSheet.create({
     paddingLeft: 10,
     marginBottom: 10,
     fontSize: 15,
-    fontWeight: 'bold' as const,
-    },
-    Box2: {
-    boxSizing: 'border-box' as const,
-    width: '80%',
+    fontWeight: 'bold',
+  },
+  Box2: {
+    width: width * 0.8,
     padding: 10,
     borderRadius: 10,
-    alignItems: 'center' as const,
-    justifyContent: 'center' as const,
-    marginTop: '10%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: height * 0.05,
     backgroundColor: '#ffffff',
     borderColor: '#5f5f5fff',
     borderWidth: 2,
     marginBottom: 20,
-    },
-    Button:{
-      backgroundColor: '#007bff',
-      borderRadius: 15,
-      borderColor: 'black',
-      borderWidth: 2,
-      padding: 12,
-      width: '50%',
-      alignItems: 'center' as const,
-      justifyContent: 'center' as const,
-    },
-    ErroMsg:{
-      color: 'red',
-      fontWeight: 'bold' as const,
-      marginBottom: 10,
-      marginStart: 5,
-      padding: 20,
-      textAlign: 'center' as const,
-    },
-  });
+  },
+  Button: {
+    backgroundColor: '#007bff',
+    borderRadius: 15,
+    borderColor: 'black',
+    borderWidth: 2,
+    padding: 12,
+    width: width * 0.5,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  ErroMsg: {
+    color: 'red',
+    fontWeight: 'bold',
+    marginBottom: 10,
+    paddingHorizontal: 20,
+    textAlign: 'center',
+  },
+});
