@@ -1,8 +1,8 @@
-import { StyleSheet, TextInput, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 export const stylesWI = StyleSheet.create({
     Title:{
-        fontSize: 15,
+        fontSize: 20,
     fontWeight: 'bold' as const,
     },
     View:{

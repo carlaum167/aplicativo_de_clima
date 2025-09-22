@@ -1,14 +1,13 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef} from 'react';
 import '../../../global.css';
-import { View, Text, Button, TextInput, ScrollView, TouchableOpacity} from 'react-native';
-import { router } from 'expo-router';
+import { View, Text, TextInput, ScrollView, TouchableOpacity} from 'react-native';
 import { styles } from '~/src/styles/App';
 import axios from 'axios';
 import localization from 'expo-localization';
 import * as Location from 'expo-location';
 import WheaterInformations from '~/src/components/WheaterInformations/WheaterInformations';
 import WheaterInformations5Days from '~/src/components/WheaterInformations/WheaterInformations5Days';
-
+   
 
 interface Weather {
   name: string;
@@ -82,7 +81,7 @@ export default function App() {
  
       <View style={styles.Tela}>
         <View style={styles.Box1}>
-          <Text style={styles.Text}>Previsao do tempo</Text>
+          <Text style={styles.Text}>Previsão do tempo</Text>
           <TextInput style={styles.TextInput}
             ref={inputRef}
             placeholder="Digite sua cidade"

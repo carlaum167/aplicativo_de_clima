@@ -1,4 +1,4 @@
-import { StyleSheet, TextInput } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 export const stylesWI5 = StyleSheet.create({
     Title:{
