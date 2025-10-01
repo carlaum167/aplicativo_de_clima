@@ -7,7 +7,7 @@ import localization from 'expo-localization';
 import * as Location from 'expo-location';
 import WheaterInformations from '~/src/components/WheaterInformations/WheaterInformations';
 import WheaterInformations5Days from '~/src/components/WheaterInformations/WheaterInformations5Days';
-   
+import { LinearGradient } from 'expo-linear-gradient';     
 
 interface Weather {
   name: string;
@@ -79,7 +79,13 @@ export default function App() {
 
     <>
     <ScrollView>
-      <View style={styles.Tela}>
+      <LinearGradient 
+      style={styles.Tela}
+      colors={['#46a2edff', '#0b7beaff']}
+      start={{ x: 0, y: 0 }}
+      end={{ x: 1, y: 1 }}  
+      locations={[0, 0.7]}
+      >
         <View style={styles.Box1}>
           <Text style={styles.Text}>Previsão do tempo</Text>
           <TextInput style={styles.TextInput}
@@ -108,7 +114,7 @@ export default function App() {
           {weather5Days && <WheaterInformations5Days weather5Days={weather5Days} />}
         </View>
           <Text style={styles.ErroMsg}>{erroMsg}</Text>
-      </View>
+      </LinearGradient>
     </ScrollView>
     </>
   );

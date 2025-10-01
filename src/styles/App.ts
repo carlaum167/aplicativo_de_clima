@@ -1,14 +1,18 @@
-import { StyleSheet, Dimensions } from 'react-native';  
+import { StyleSheet, Dimensions, View } from 'react-native';  
 const { width, height } = Dimensions.get('window');
+import { LinearGradient } from 'expo-linear-gradient';
+
+
 
 export const styles = StyleSheet.create({
+
   Tela: {
     flex: 1,
     backgroundColor: '#7ec5ffff',
     alignItems: 'center',
     justifyContent: 'flex-start',
     paddingVertical: 20,
-  
+    minHeight: height,
   },
   Box1: {
     width: width * 0.8,
