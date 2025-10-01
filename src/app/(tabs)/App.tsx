@@ -26,6 +26,8 @@ export default function App() {
   const [currentLocalization, setCurrentLocalization] = React.useState(localization);
   const [erroMsg, setErroMsg] = React.useState('');
 
+  
+
   useEffect(() => {
     (async () => {
       try {
@@ -73,12 +75,10 @@ export default function App() {
     setWeather5Days(apiInfo5Days.data);
 
   }
-
   return (
 
     <>
     <ScrollView>
- 
       <View style={styles.Tela}>
         <View style={styles.Box1}>
           <Text style={styles.Text}>Previsão do tempo</Text>
@@ -91,8 +91,17 @@ export default function App() {
           <TouchableOpacity style={styles.Button} onPress={CitySearch}>
             <Text style={styles.Text}>Buscar</Text>
           </TouchableOpacity>
-          </View>
+          <TouchableOpacity style={styles.Button} onPress={() => {
+            setWeather(undefined);
+            setWeather5Days(undefined);
+            setErroMsg('');
+            setCity('');
+          }}>
+            <Text style={styles.Text}>Limpar</Text>
+          </TouchableOpacity>
+          </View>  
         <View style={styles.Box2}>
+          <Text style={styles.Text}> {weather ? "Cidade: " + weather.name : 'Nenhuma cidade selecionada'}</Text>
           {weather && <WheaterInformations weather={weather} />}
         </View>
         <View style={styles.Box2}>

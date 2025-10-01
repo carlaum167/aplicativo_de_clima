@@ -8,10 +8,11 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start',
     paddingVertical: 20,
+  
   },
   Box1: {
     width: width * 0.8,
-    padding: 10,
+    padding: 20,
     borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'center',
@@ -19,7 +20,7 @@ export const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
     borderColor: '#5f5f5fff',
     borderWidth: 2,
-    marginBottom: 20,
+    gap: 10,
   },
   Text: {
     fontSize: 15,

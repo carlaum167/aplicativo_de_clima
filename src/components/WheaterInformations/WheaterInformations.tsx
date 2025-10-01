@@ -28,7 +28,6 @@ function WheaterInformations({ weather }: WheaterInformationsProps) {
             {weather && (
                 <View>
                     <Image source={{ uri: `https://openweathermap.org/img/wn/${weather.weather[0].icon}.png` }} alt="Weather icon" style={stylesWI.Image} />
-                    <Text style={stylesWI.Texts}>Cidade: {weather.name}</Text>
                     <Text style={stylesWI.Texts}>Temperatura: {Math.round(weather.main.temp)}°C</Text>
                     <Text style={stylesWI.Texts}>Descrição: {weather.weather[0].description}</Text>
                     <Text style={stylesWI.Texts}>Sensação Térmica: {Math.round(weather.main.feels_like)}°C</Text>
