@@ -51,6 +51,14 @@ export const styles = StyleSheet.create({
     textTransform: 'capitalize',
   },
 
+  Text2: {
+    paddingBottom: height * 0.01,
+    fontSize: 19,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    textTransform: 'capitalize',
+  },
+
   TextInput: {
     backgroundColor: '#e6e6e6',
     width: '100%',

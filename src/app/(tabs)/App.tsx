@@ -89,7 +89,7 @@ export default function App() {
         <Text style={styles.TitleLogo}>Clima App</Text>
       <Image source={require('../../assets/sol_nuvem-removebg-preview.png')} style={styles.ImageLogo}/>
         <View style={styles.Box1}>
-          <Text style={styles.Text}>Previsão do tempo</Text>
+          <Text style={styles.Text2}>Pesquisar cidade:</Text>
           <TextInput style={styles.TextInput}
             ref={inputRef}
             placeholder="Digite sua cidade"
@@ -109,6 +109,7 @@ export default function App() {
           </TouchableOpacity>
           </View>  
         <View style={styles.Box2}>
+          <Text style={styles.Text2}>Previsão do tempo:</Text>
           <Text style={styles.Text}> {weather ? "Cidade: " + weather.name : 'Nenhuma cidade selecionada'}</Text>
           {weather && <WheaterInformations weather={weather} />}
         </View>
