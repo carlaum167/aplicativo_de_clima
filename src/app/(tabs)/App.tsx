@@ -1,6 +1,6 @@
 import React, { useEffect, useRef} from 'react';
 import '../../../global.css';
-import { View, Text, TextInput, ScrollView, TouchableOpacity} from 'react-native';
+import { View, Text, TextInput, ScrollView, TouchableOpacity, Image} from 'react-native';
 import { styles } from '~/src/styles/App';
 import axios from 'axios';
 import localization from 'expo-localization';
@@ -81,11 +81,13 @@ export default function App() {
     <ScrollView>
       <LinearGradient 
       style={styles.Tela}
-      colors={['#46a2edff', '#0b7beaff']}
+      colors={['#008bfcff', '#a7d4eaff', '#ef9210ff']}
       start={{ x: 0, y: 0 }}
       end={{ x: 1, y: 1 }}  
-      locations={[0, 0.7]}
+      locations={[0, 0.6, 1]}
       >
+        <Text style={styles.TitleLogo}>Clima App</Text>
+      <Image source={require('../../assets/sol_nuvem-removebg-preview.png')} style={styles.ImageLogo}/>
         <View style={styles.Box1}>
           <Text style={styles.Text}>Previsão do tempo</Text>
           <TextInput style={styles.TextInput}

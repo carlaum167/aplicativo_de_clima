@@ -11,9 +11,26 @@ export const styles = StyleSheet.create({
     backgroundColor: '#7ec5ffff',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    paddingVertical: 20,
     minHeight: height,
   },
+
+  TitleLogo: {
+    paddingTop: height * 0.05,
+    marginBottom: height * 0.02,
+    textAlign: 'center',
+    color: 'white',
+    fontSize: 50,
+    fontWeight: 'bold',
+    textShadowColor: 'black',
+    textShadowOffset: { width: 1, height: 4 },
+    textShadowRadius: 5,
+  },
+
+  ImageLogo: {
+   width: width * 0.75,
+   height: height * 0.25,
+  },
+
   Box1: {
     width: width * 0.8,
     padding: 20,
@@ -26,12 +43,14 @@ export const styles = StyleSheet.create({
     borderWidth: 2,
     gap: 10,
   },
+
   Text: {
     fontSize: 15,
     fontWeight: 'bold',
     textAlign: 'center',
     textTransform: 'capitalize',
   },
+
   TextInput: {
     backgroundColor: '#e6e6e6',
     width: '100%',
@@ -44,6 +63,7 @@ export const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: 'bold',
   },
+
   Box2: {
     width: width * 0.8,
     padding: 10,
@@ -56,6 +76,7 @@ export const styles = StyleSheet.create({
     borderWidth: 2,
     marginBottom: 20,
   },
+
   Button: {
     backgroundColor: '#007bff',
     borderRadius: 15,
@@ -66,6 +87,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+
   ErroMsg: {
     color: 'red',
     fontWeight: 'bold',
@@ -73,4 +95,5 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 20,
     textAlign: 'center',
   },
+
 });
